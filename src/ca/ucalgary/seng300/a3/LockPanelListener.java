@@ -57,7 +57,7 @@ public class LockPanelListener implements org.lsmr.vending.hardware.LockListener
 	@Override
 	public void locked(Lock lock) {
 		// TODO Auto-generated method stub
-		communicator.disableSafety();
+		communicator.enableSafety();
 		panelLocked();
 		
 	}
@@ -65,7 +65,7 @@ public class LockPanelListener implements org.lsmr.vending.hardware.LockListener
 	@Override
 	public void unlocked(Lock lock) {
 		// TODO Auto-generated method stub
-		communicator.enableSafety();
+		communicator.disableSafety();
 		panelUnlocked();
 		
 	}
