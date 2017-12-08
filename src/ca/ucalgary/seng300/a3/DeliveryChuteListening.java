@@ -15,11 +15,14 @@ import java.util.Date;
 import org.lsmr.vending.*;
 import org.lsmr.vending.hardware.*;
 
+/**
+* Listener class to implement functionality for the delivery chute.
+*/
 public class DeliveryChuteListening implements DeliveryChuteListener {
 
 	boolean active;
-	PopCan[] itemsReturned; // now Popcan instead of Deliverable since changes
-							// hardware by client
+	PopCan[] itemsReturned; // now Popcan instead of Deliverable since changes to hardware
+							
 	final VendCommunicator comm = VendCommunicator.getInstance();
 	static DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
 	static Date dateobj = new Date();
