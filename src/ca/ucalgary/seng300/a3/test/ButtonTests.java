@@ -209,7 +209,6 @@ public class ButtonTests {
 		buttons = null;
 		receptacle = null;
 		chute = null;
-		msgLoop = null;
 		rackMap = null;
 		coinReturn = null;
 		changeLight = null;
