@@ -439,6 +439,8 @@ public class GUI extends JFrame{
 		//Special Listener for the configuration panel enter button
 		vendingMachine.getConfigurationPanel().getEnterButton().register(new SelectionButtonListening(37));
 		
+	    	vendingMachine.getLock().register(new LockPanelListener());
+	    
 		comm.linkVending(receptacle, changeLight, outOfOrderLight, canRacks, vendingMachine, rackMap, null, 0, null);
 		
 
