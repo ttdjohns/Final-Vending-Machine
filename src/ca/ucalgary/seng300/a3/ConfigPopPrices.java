@@ -1,9 +1,16 @@
+/**
+*SENG 300 Group 3
+*/
+
 package ca.ucalgary.seng300.a3;
+
 
 import org.lsmr.vending.hardware.SimulationException;
 
-// 34th button is b
-
+/**
+* Class to configure new pop prices using the Configuration Panel.
+* If trying to backspace, use b (34th character).
+*/
 public class ConfigPopPrices extends AbstractConfigMode {
 	private int subMode;
 	private int enteredPrice;
