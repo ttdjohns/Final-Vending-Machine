@@ -1,3 +1,6 @@
+/**
+* SENG 300 Group 3
+*/
 package ca.ucalgary.seng300.a3;
 
 import java.io.IOException;
@@ -6,6 +9,10 @@ import org.lsmr.vending.hardware.AbstractHardware;
 import org.lsmr.vending.hardware.AbstractHardwareListener;
 import org.lsmr.vending.hardware.Lock;
 
+/**
+* Listener class for the lock panel, which controls if the machine is locked/unlocked for
+* configuration and loading.
+*/
 public class LockPanelListener implements org.lsmr.vending.hardware.LockListener{
 
 	private VendCommunicator communicator;
@@ -54,6 +61,10 @@ public class LockPanelListener implements org.lsmr.vending.hardware.LockListener
 		} 
 	}
 
+	/**
+	* Method to unlock the machine.
+	@param lock - the lock object
+	*/
 	@Override
 	public void locked(Lock lock) {
 		// TODO Auto-generated method stub
@@ -62,6 +73,10 @@ public class LockPanelListener implements org.lsmr.vending.hardware.LockListener
 		
 	}
 
+	/**
+	* Method to lock the machine.
+	* @param lcok - the lock object
+	*/
 	@Override
 	public void unlocked(Lock lock) {
 		// TODO Auto-generated method stub
