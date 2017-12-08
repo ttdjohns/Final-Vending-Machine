@@ -1,8 +1,15 @@
+/**
+*SENG 300 Group 3
+*/
+
 package ca.ucalgary.seng300.a3;
 
 import java.util.*;
 import org.lsmr.vending.hardware.*;
 
+/**
+* Class to control the logic behind how the Configuration Panel functions.
+*/
 public class ConfigPanelLogic {
 	protected int mode;
 	protected final int MAX_MODE = 1;   // the number of modes currently available
