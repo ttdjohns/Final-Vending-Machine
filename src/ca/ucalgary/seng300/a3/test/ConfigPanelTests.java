@@ -29,7 +29,6 @@ import ca.ucalgary.seng300.a3.OutOfOrderLightListening;
 import ca.ucalgary.seng300.a3.PopCanRackListening;
 import ca.ucalgary.seng300.a3.SelectionButtonListening;
 import ca.ucalgary.seng300.a3.VendCommunicator;
-import ca.ucalgary.seng300.a3.emptyMsgLoop;
 
 public class ConfigPanelTests {
 	private VendingMachine machine;
@@ -37,7 +36,6 @@ public class ConfigPanelTests {
 	private SelectionButtonListening[] buttons;
 	private CoinReceptacleListening receptacle;
 	private DeliveryChuteListening chute;
-	private emptyMsgLoop msgLoop;
 	private HashMap<CoinRack, CoinRackListening> rackMap;
 	private CoinReturnListening coinReturn;
 	private IndicatorLighListening changeLight;
@@ -81,10 +79,9 @@ public class ConfigPanelTests {
 		
 		machine = new VendingMachine(coinKinds, 6, 200,10,200, 200, 200);
 		VendCommunicator communicator = VendCommunicator.getInstance();
-		msgLoop = new emptyMsgLoop("Hi there!");
 
 		buttons = new SelectionButtonListening[numButtons];
-		receptacle = new CoinReceptacleListening(reCap,msgLoop); //ESB 
+		receptacle = new CoinReceptacleListening(reCap); //ESB 
 		canRacks = new PopCanRackListening[6];
 		chute = new DeliveryChuteListening();
 
