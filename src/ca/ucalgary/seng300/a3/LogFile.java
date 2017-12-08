@@ -1,6 +1,6 @@
 
 /**
- * Function for delivery chute listener
+ *
  * Elodie Boudes 10171818, Grace Ferguson 30004869, 
  * Tae Chyung 10139101, Karndeep Dhami 10031989, 
  * Andrew Garcia-Corley 10015169 & Michael de Grood 10134884
@@ -19,6 +19,9 @@ import java.text.SimpleDateFormat;
 
 import java.util.Date;
 
+/**
+* Class to write to a log file LogEvent.txt.
+*/
 public class LogFile {
 
 	//Each action of the user and the actions of the machine that are visible to the user should be logged
@@ -41,12 +44,16 @@ public class LogFile {
 
 // }
 
-    
+    /**
+    * Method to clsoe the log file.
+    */
     public static void closeLogFile () throws IOException {
     	fw.close(); 
     }
     
-    
+        /**
+	* Method to create the log file. Returns true if successful.
+	*/
 	public static boolean createLogFile () throws FileNotFoundException, UnsupportedEncodingException {
 		
 		String fileName = "LogEvent.txt";
