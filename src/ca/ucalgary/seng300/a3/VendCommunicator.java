@@ -1,4 +1,6 @@
-//SENG300 Group Assignment 3
+/**
+*SENG 300 Group 3
+*/
 
 package ca.ucalgary.seng300.a3;
 
@@ -35,7 +37,7 @@ public class VendCommunicator {
 
 	//For use with writing to our log file
 	static DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
-    static Date dateobj = new Date();
+    	static Date dateobj = new Date();
 	
 	//0 = Cash, 1 = Debit, 2 = Credit
 	private int paymentType;
@@ -226,9 +228,16 @@ public class VendCommunicator {
 	}
 	
 	//Required setters and getters
+	/**
+	* Gets the changeLightFlag.
+	*/
 	public boolean getChangeLightFlag() {
 		return changeLightFlag;
 	}
+	/**
+	* Sets the changeLightFlag
+	* @param flag - the new flag to be set
+	*/
 	public void setChangeLightFlag(boolean flag) {
 		changeLightFlag = flag;
 	}
@@ -241,17 +250,31 @@ public class VendCommunicator {
 			machine.getExactChangeLight().deactivate();
 		}
 	}*/
+	/**
+	* Gets the credit.
+	*/
 	public int getCredit() {
 		return this.credit;
 	}
+	/**
+	* Sets the validCardFlag.
+	* @param flag - the new flag to be set
+	*/
 	public void setValidCardFlag(boolean flag) {
 		this.validCardFlag = flag;
 	}
-	//Setter for the payment type
+	/**
+	* Sets the payment type.
+	* @param paymentType - the new value to be used for payment type
+	*                    - 0 = cash, 1 = debit, 2 = credit, anything else not supported for now
+	*/
 	public void setPaymentType(int paymentType) {
 		this.paymentType = paymentType;
 	}	
-	//Setter for the amount to be paid
+	/**
+	* Sets the amount to be paid by the customer.
+	* @param amount - the amount the customer wishes to pay with a given payment method
+	*/
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
