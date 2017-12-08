@@ -1,3 +1,6 @@
+/**
+*SENG 300 Group 3
+*/
 package ca.ucalgary.seng300.a3;
 
 
@@ -38,31 +41,37 @@ public class SwipeListening implements SwipeListener {
 	}
 	
 	/**
-	 * @return
+	 * Gets the amount of the payment, or the card's limit.
 	 */
 	public double getAmountCovered() {
 		return amountCovered;
 	}
 	
 	/**
-	 * @return
+	 * Gets the partial payment amount.
 	 */
 	public boolean getPartial() {
 		return partial;
 	
 	}
 	/**
-	 * @return
+	 * Gets the full payment amount.
 	 */
 	public boolean getFull() {
 		return full;
 	
 	}
 	
+	/**
+	* Returns whether the card was accepted.
+	*/
 	public boolean getAccepted() {
 		return accepted;
 	}
 	
+	/**
+	* Returns whether the card was declined.
+	*/
 	public boolean getDeclined() {
 		return declined;
 	}
@@ -101,7 +110,10 @@ public class SwipeListening implements SwipeListener {
 		
 	}
 	
-	
+	/**
+	* Method to take partial payment
+	* @param amount - the partial payment amount
+	*/
 	@Override
 	public void partialPayment(double amount) {
 		// TODO Auto-generated method stub
@@ -114,7 +126,9 @@ public class SwipeListening implements SwipeListener {
 		
 	}
 
-	
+	/**
+	* Method to take full payment
+	*/
 	@Override
 	public void exactPayment() {
 		prevMessage  = "Full Payment has been selected full variable was "+ full;
@@ -127,6 +141,9 @@ public class SwipeListening implements SwipeListener {
 	}
 
 
+	/**
+	* Method to decline any payment
+	*/
 	@Override
 	public void paymentDeclined() {
 			prevMessage  = "Payment was Declined = " + declined;
@@ -137,6 +154,9 @@ public class SwipeListening implements SwipeListener {
 			messageChange(prevMessage,currMessage);
 	}
 
+	/**
+	* Method to accept any payment
+	*/
 	@Override
 	public void paymentAccepted() {
 		prevMessage  = "Payment was accepted = " + accepted;
