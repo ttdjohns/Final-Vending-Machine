@@ -1,3 +1,7 @@
+/**
+*SENG 300 Group 3
+*/
+
 package ca.ucalgary.seng300.a3;
 
 
