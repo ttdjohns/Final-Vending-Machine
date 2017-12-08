@@ -14,6 +14,9 @@ import org.lsmr.vending.hardware.AbstractHardwareListener;
 import org.lsmr.vending.hardware.Display;
 import org.lsmr.vending.hardware.DisplayListener;
 
+/**
+* Listener class to implement functions for the vending machine's display.
+*/
 public class DisplayListening implements DisplayListener {
 	private boolean isOn;
 	private String prevMessage = "";
@@ -24,18 +27,30 @@ public class DisplayListening implements DisplayListener {
 	
 	}
 
+	/**
+	* Method to enable the display.
+	*/
 	@Override
 	public void enabled(AbstractHardware<? extends AbstractHardwareListener> hardware) {
 		isOn = true;
 		
 	}
 
+	/**
+	* Method to disable the display.
+	*/
 	@Override
 	public void disabled(AbstractHardware<? extends AbstractHardwareListener> hardware) {
 		isOn = false;
 		
 	}
 
+	/**
+	* Method to change the message on the display.
+	* @param display - the display object whose message will be changed
+	* @param oldMessage - the previous message on the display
+	* @param newMessage - the new message to be displayed
+	*/
 	@Override
 	public void messageChange(Display display, String oldMessage, String newMessage) {
 		prevMessage = oldMessage;
@@ -59,7 +74,7 @@ public class DisplayListening implements DisplayListener {
 	
 	/**
 	 * For testing purposes
-	 * @return
+	 * @return prevMessage - returns the previous message
 	 */
 	public String getPrevMessage() {
 		return prevMessage;
@@ -68,7 +83,7 @@ public class DisplayListening implements DisplayListener {
 	
 	/**
 	 * For testing purposes
-	 * @return
+	 * @return currMessage - returns the current message
 	 */
 	public String getCurrMessage() {
 		return currMessage;
@@ -76,8 +91,9 @@ public class DisplayListening implements DisplayListener {
 	}
 	
 	/**
-	 * For testing purposes 
-	 * @param msg
+	 * For testing purposes
+	 * Sets the current message field.
+	 * @param msg - the message to be set as the current message
 	 */
 	public void setCurrMessage(String msg) {
 		currMessage = msg;
@@ -86,7 +102,8 @@ public class DisplayListening implements DisplayListener {
 	
 	/**
 	 * for testing purposes
-	 * @param msg
+	 * Sets the previous message field.
+	 * @param msg - the message to be set as the previous message
 	 */
 	public void setPrevMessage(String msg) {
 		prevMessage = msg;
