@@ -1,3 +1,6 @@
+/**
+*SENG 300 Group 3
+*/
 package ca.ucalgary.seng300.a3;
 
 import java.awt.*;
@@ -19,6 +22,9 @@ import org.lsmr.vending.hardware.VendingMachine;
 
 import ca.ucalgary.seng300.a3.*;
 
+/**
+* Class to handle the GUI and functionality for loading and unloading pops if the machine is unlocked.
+*/
 public class LoadUnloadGUI extends JFrame {
 	private JPanel p = new JPanel(new GridBagLayout());
 	private GridBagConstraints c = new GridBagConstraints();
@@ -34,6 +40,9 @@ public class LoadUnloadGUI extends JFrame {
 	private	static DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
 	private static Date dateobj = new Date();
 	
+	/**
+	* Single constructor for the class.
+	*/
 	public LoadUnloadGUI(VendingMachine vend) {
 		super("Loading and Unloading Panel");
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
