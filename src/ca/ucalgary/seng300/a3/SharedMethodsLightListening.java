@@ -26,7 +26,9 @@ public class SharedMethodsLightListening  implements IndicatorLightListener{
 	private String currMessage = "";
 	
 
-	
+	/**
+	* Method to change the message in the event log.
+	*/
 	public void messageChange(String oldMessage, String newMessage) {
 		// call event log here 
 		
@@ -40,18 +42,30 @@ public class SharedMethodsLightListening  implements IndicatorLightListener{
 		} 
 	}
 	
+	/**
+	* Gets the isActive flag.
+	*/
 	public Boolean getisActive() {
 			return isActive;
 	}
+	/**
+	* Gets the previous message.
+	*/
 	public String getPrevMessage() {
 		return prevMessage;
-}
+	}
+	/**
+	* Gets the current message.
+	*/
 	public String getCurrMessage() {
 		return currMessage;
-}
+	}
 	
 	 
-	
+	/**
+	* Sets the current message using messageChange
+	* @param light - the indicator light object
+	*/
 	private void setMessage (IndicatorLight light) {
 		prevMessage  = "Light isActive value was " + isActive;
 		isActive = light.isActive();
@@ -60,12 +74,18 @@ public class SharedMethodsLightListening  implements IndicatorLightListener{
 		
 	}
 	
+	/**
+	* Method which sets the message according to the activated indicator light.
+	*/
 	@Override
 	public void activated(IndicatorLight light) {
 		setMessage(light);
 		
 	}
 	
+	/**
+	* Method which sets the message according to the deactivated indicator light.
+	*/
 	@Override
 	public void deactivated(IndicatorLight light) {
 		setMessage(light);
