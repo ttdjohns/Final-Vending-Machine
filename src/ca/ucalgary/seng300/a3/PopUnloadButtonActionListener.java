@@ -2,8 +2,8 @@
  * SENG 300 Group Assignment 3
  * Group 
  * 
- * Class to update GUI coin return value with the coins in the 
- * vending machine coin return
+ * Class to update GUI pop return value with the pops in the 
+ * vending machine pop return
  */
 
 package ca.ucalgary.seng300.a3;
@@ -25,6 +25,10 @@ public class PopUnloadButtonActionListener implements ActionListener {
 		l = listener;
 	}
 	
+	/**
+	* Method to remove items from the pop's delivery chute.
+	* @param arg0 - argument if the Unload Pop button is pressed.
+	*/
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		vend.getDeliveryChute().removeItems();
