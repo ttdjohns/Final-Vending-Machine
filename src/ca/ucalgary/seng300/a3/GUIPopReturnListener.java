@@ -15,6 +15,9 @@ public class GUIPopReturnListener implements DeliveryChuteListener {
 	private VendingMachine vend;
 	private GUI gui;
 	
+	/**
+	* Single constructor for the class.
+	*/
 	public GUIPopReturnListener(VendingMachine vending, GUI mygui) {
 		vend = vending;
 		gui = mygui;
@@ -34,7 +37,10 @@ public class GUIPopReturnListener implements DeliveryChuteListener {
 	}
 
 	
-	
+	/**
+	* Method to implement an item being delivered through the chute.
+	* @param chute - the delivery chute that is being used
+	*/
 	@Override
 	public void itemDelivered(DeliveryChute chute) {
 		//itemsInChute++;
@@ -71,6 +77,9 @@ public class GUIPopReturnListener implements DeliveryChuteListener {
 		// Do nothing		
 	}
 	
+	/**
+	* Method to clear out all items from the chute (such as taking pops or coins)
+	*/
 	public void clearItemsInChute() {
 		itemsInChute = 0;
 	}
