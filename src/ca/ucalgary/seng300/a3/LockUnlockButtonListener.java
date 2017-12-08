@@ -1,3 +1,6 @@
+/**
+*SENG 300 Group 3
+*/
 package ca.ucalgary.seng300.a3;
 
 import java.awt.event.ActionEvent;
@@ -8,6 +11,9 @@ import javax.swing.JButton;
 
 import org.lsmr.vending.hardware.VendingMachine;
 
+/**
+* Listen class for the button which controls locking/unlocking the vending machine.
+*/
 public class LockUnlockButtonListener implements ActionListener{
 
 	
@@ -16,12 +22,19 @@ public class LockUnlockButtonListener implements ActionListener{
 	private GUILockPanelListener l;
 	private LoadUnloadGUI loadunload;
 	
+	/**
+	* Single constructor for the class.
+	*/
 	public LockUnlockButtonListener(VendingMachine vending, GUI mygui, GUILockPanelListener listener) {
 		vend = vending;
 		gui = mygui;
 		l = listener;
 	}
 	
+	/**
+	* Method to control whether to lock or unlock the machine.
+	* @param arg0 - whether the button has been pressed
+	*/
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		String text;
