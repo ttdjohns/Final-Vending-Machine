@@ -1,3 +1,7 @@
+/**
+*SENG 300 Group 3
+*/
+
 package ca.ucalgary.seng300.a3;
 
 import java.awt.BorderLayout;
@@ -26,6 +30,10 @@ import ca.ucalgary.seng300.a3.*;
 import javax.swing.JTextArea;
 import javax.swing.JLabel;
 
+/**
+* The main GUI class that handles the Vending Machine's main (user) display.
+* This class contains the main() method which runs the vending machine program.
+*/
 public class GUI extends JFrame{
     private JPanel p = new JPanel(new GridBagLayout());
     private GridBagConstraints c = new GridBagConstraints();
@@ -82,7 +90,7 @@ public class GUI extends JFrame{
     LoadUnloadGUI loadunload;
     
     /**
-     * 
+     * Only constructor for the GUI.
      * @param vend the VendingMachine connected to the GUI
      * @param comm the VendCommunicator connected to the GUI
      */
@@ -147,6 +155,7 @@ public class GUI extends JFrame{
         c.gridy = 3;
         c.gridx = 2;
         p.add(coinButton, c);
+	    
        /* Add a coin return button
         c.weightx = 0.5;
         c.gridy = 3;
@@ -247,14 +256,17 @@ public class GUI extends JFrame{
         
     }
        
+    /**
+    * Gets the GUI for the configuration panel.
+    */
     public GUIConfigPanel getGUIConfig() {
     	return configP;
     }
     
     /**
      * Changes the text of the pop buttons when their values are updated
-     * @param buttonIndex
-     * @param newText
+     * @param buttonIndex - the index of the pop button
+     * @param newPrice - the new price to set on the pop button
      */
     public void setPopButtonText(int buttonIndex, double newPrice) {
     	selection[buttonIndex].setText(vend.getPopKindName(buttonIndex) + "  $" + newPrice);
@@ -335,7 +347,7 @@ public class GUI extends JFrame{
     
     /**
      * Setter method for changing the value displayed in the coin return.
-     * @params: value: the integer value to be set
+     * @param value: the integer value to be set
      */
     public void setCoinReturnVal(int value) {
     	double decVal = value/100.0;
@@ -350,7 +362,7 @@ public class GUI extends JFrame{
     
     /*
      * Setter method for changing the value displayed in the pop delivery chute.
-     * @param: value: the integer value to be set
+     * @param popsInChute: the string to change the pop returns text to
      */
     public void setPopReturnVal(String popsInChute) {
     	popRetInput.setText(popsInChute);
@@ -358,19 +370,32 @@ public class GUI extends JFrame{
     	setVisible(true);
     }
     
+    /**
+    * Gets the popsReturned
+    */
     public String getPopsReturned() {
     	return popsReturned;
     }
     
-    
+    /**
+    * Method to change the text of the lock button.
+    * @param text - the new text to be set
+    */
     public void changeTextLock(String text) {
     	lockUnlock.setText(text);
     }
     
+    /**
+    * Sets the last button pressed to a new button
+    * @param newPress - the index of the new button to be pressed
+    */
     public void setLastButtonPressed(int newPress) {
     	lastButtonPressed = newPress;
     }
     
+    /**
+    * Gets the last button that was pressed.
+    */
     public int getLastButtonPressed() {
     	return lastButtonPressed;
     }
