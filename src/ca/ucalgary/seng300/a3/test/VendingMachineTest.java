@@ -1,5 +1,5 @@
 /**
- * SENG300 Group Assignment 2
+ * SENG300 Group Assignment 3
  * @author
  * 
  * A class that sets up and tests the vending machine
@@ -29,6 +29,7 @@ import ca.ucalgary.seng300.a3.OutOfOrderLightListening;
 import ca.ucalgary.seng300.a3.PopCanRackListening;
 import ca.ucalgary.seng300.a3.SelectionButtonListening;
 import ca.ucalgary.seng300.a3.VendCommunicator;
+
 
 public class VendingMachineTest {
 
@@ -140,7 +141,7 @@ public class VendingMachineTest {
 			machine.getCoinSlot().addCoin(new Coin(25));
 			machine.getCoinSlot().addCoin(new Coin(25));
 			machine.getSelectionButton(i).press();
-			assertTrue(canRacks[i].isEmpty());
+			assertTrue(machine.getPopCanRack(i).size() == 0);
 		}
 	
 	}
@@ -188,8 +189,8 @@ public class VendingMachineTest {
 			machine.getCoinSlot().addCoin(new Coin(25));
 			machine.getCoinSlot().addCoin(new Coin(25));
 			machine.getSelectionButton(i).press();
-			assertTrue(canRacks[i].isEmpty());
-		}
+			assertTrue(machine.getPopCanRack(i).size() == 0);
+			}
 	}
 
 	/**
